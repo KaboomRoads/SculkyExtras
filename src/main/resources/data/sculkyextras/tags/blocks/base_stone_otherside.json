@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "sculkyextras:otherstone",
+    "minecraft:deepslate",
+    "minecraft:tuff",
+    "sculkybits:sculk_flesh",
+    "sculkybits:sculk_growth",
+    "sculkybits:sculk_jaw",
+    "sculkybits:sculk_trap",
+    "sculkybits:sculk_lurker",
+    "sculkybits:sculk_nest",
+    "sculkybits:sculk_stabber",
+    "sculkybits:sculk_absorber",
+    "minecraft:sculk"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "sculk_sensor_phase=inactive": {
+      "model": "sculkyextras:block/sculk_tendril_inactive"
+    },
+    "sculk_sensor_phase=cooldown": {
+      "model": "sculkyextras:block/sculk_tendril_inactive"
+    },
+    "sculk_sensor_phase=active": {
+      "model": "sculkyextras:block/sculk_tendril_active"
+    }
+  }
+}

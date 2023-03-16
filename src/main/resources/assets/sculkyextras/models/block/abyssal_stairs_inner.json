@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "sculkyextras:block/abyssal_planks",
+    "side": "sculkyextras:block/abyssal_planks",
+    "top": "sculkyextras:block/abyssal_planks"
+  }
+}

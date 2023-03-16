@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "sculkyextras:abyssal_log",
+    "sculkyextras:abyssal_wood",
+    "sculkyextras:stripped_abyssal_log",
+    "sculkyextras:stripped_abyssal_wood",
+    "sculkyextras:abyssal_planks",
+    "sculkyextras:abyssal_stairs",
+    "sculkyextras:abyssal_slab",
+    "sculkyextras:abyssal_fence",
+    "sculkyextras:abyssal_fence_gate",
+    "sculkyextras:abyssal_door",
+    "sculkyextras:abyssal_trapdoor",
+    "sculkyextras:abyssal_button",
+    "sculkyextras:abyssal_pressure_plate",
+    "sculkyextras:abyssal_sign",
+    "sculkyextras:abyssal_wall_sign",
+    "sculkyextras:abyssal_hanging_sign",
+    "sculkyextras:abyssal_wall_hanging_sign"
+  ]
+}

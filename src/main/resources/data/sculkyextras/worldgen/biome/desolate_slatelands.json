@@ -1,0 +1,70 @@
+{
+  "temperature": 0.5,
+  "downfall": 0,
+  "precipitation": "none",
+  "effects": {
+    "sky_color": 2766396,
+    "fog_color": 2899772,
+    "water_color": 3621976,
+    "water_fog_color": 3621976,
+    "grass_color": 4872286,
+    "foliage_color": 4872286,
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.01
+    }
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave_extra_underground",
+      "minecraft:cave"
+    ]
+  },
+  "features": [
+    [
+      "sculkyextras:ore_deepslate"
+    ],
+    [
+      "sculkyextras:ore_deepslate"
+    ],
+    [
+      "sculkyextras:ore_deepslate"
+    ],
+    [
+      "sculkyextras:ore_deepslate",
+      "sculkyextras:ore_tuff"
+    ],
+    [
+      "sculkyextras:ore_deepslate",
+      "sculkyextras:ore_tuff"
+    ],
+    [
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_diamond"
+    ],
+    [
+      "sculkyextras:sculk_lustre",
+      "sculkyextras:sculk_lustre_extra"
+    ],
+    [
+      "sculkyextras:spring_sculk"
+    ],
+    [
+      "sculkyextras:spring_sculk"
+    ],
+    [
+      "sculkyextras:spring_sculk"
+    ],
+    [
+      "minecraft:sculk_vein"
+    ],
+    [
+      "minecraft:sculk_vein"
+    ]
+  ]
+}

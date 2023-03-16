@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sculkyextras:block/abyssal_slab"
+    },
+    "type=double": {
+      "model": "sculkyextras:block/abyssal_planks"
+    },
+    "type=top": {
+      "model": "sculkyextras:block/abyssal_slab_top"
+    }
+  }
+}

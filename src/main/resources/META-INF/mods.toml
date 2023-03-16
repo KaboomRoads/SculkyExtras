@@ -1,0 +1,29 @@
+modLoader = "javafml"
+loaderVersion = "[44,)"
+license = "MIT"
+[[mods]]
+modId = "sculkyextras"
+version = "${file.jarVersion}"
+displayName = "SculkyExtras"
+authors = "KaboomRoads"
+description = '''
+Extra features for Sculky Bits.
+'''
+[[dependencies.sculkyextras]] #optional
+modId = "forge"
+mandatory = true
+versionRange = "[44,)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.sculkyextras]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.3,1.20)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.sculkyextras]]
+modId = "sculkybits"
+mandatory = true
+versionRange = "[1.0c,)"
+ordering = "NONE"
+side = "BOTH"

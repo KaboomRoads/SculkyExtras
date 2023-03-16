@@ -1,0 +1,42 @@
+{
+  "temperature": 0.25,
+  "downfall": 0,
+  "precipitation": "none",
+  "effects": {
+    "sky_color": 734279,
+    "fog_color": 16950,
+    "water_color": 797271,
+    "water_fog_color": 797271,
+    "grass_color": 734794,
+    "foliage_color": 734794,
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.05
+    }
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave_extra_underground",
+      "minecraft:cave"
+    ]
+  },
+  "features": [
+    [
+      "sculkyextras:ore_deepslate"
+    ],
+    [
+      "sculkyextras:ore_sculk"
+    ],
+    [
+      "sculkyextras:sculk_patch_otherside",
+      "minecraft:sculk_vein"
+    ],
+    [
+      "sculkyextras:sculk_tendril"
+    ]
+  ]
+}

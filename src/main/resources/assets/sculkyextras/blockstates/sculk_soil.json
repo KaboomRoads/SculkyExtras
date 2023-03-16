@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "sculkyextras:block/sculk_soil"
+      },
+      {
+        "model": "sculkyextras:block/sculk_soil",
+        "y": 90
+      },
+      {
+        "model": "sculkyextras:block/sculk_soil",
+        "y": 180
+      },
+      {
+        "model": "sculkyextras:block/sculk_soil",
+        "y": 270
+      }
+    ]
+  }
+}

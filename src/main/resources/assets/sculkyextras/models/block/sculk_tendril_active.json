@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "sculkyextras:block/sculk_tendril_active"
+  },
+  "render_type": "cutout"
+}

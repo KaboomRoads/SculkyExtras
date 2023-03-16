@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "sculkyextras:block/otherside_portal_ns"
+    },
+    "axis=z": {
+      "model": "sculkyextras:block/otherside_portal_ew"
+    }
+  }
+}

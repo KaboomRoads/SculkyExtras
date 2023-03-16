@@ -1,0 +1,16 @@
+{
+  "type": "sculkyextras:sculk_fossils",
+  "biomes": "#sculkyextras:has_structure/sculk_fossils",
+  "step": "underground_structures",
+  "spawn_overrides": {},
+  "terrain_adaptation": "beard_thin",
+  "height": {
+    "type": "minecraft:uniform",
+    "max_inclusive": {
+      "below_top": 2
+    },
+    "min_inclusive": {
+      "above_bottom": 8
+    }
+  }
+}

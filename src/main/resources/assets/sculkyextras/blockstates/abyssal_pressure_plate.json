@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "sculkyextras:block/abyssal_pressure_plate"
+    },
+    "powered=true": {
+      "model": "sculkyextras:block/abyssal_pressure_plate_down"
+    }
+  }
+}
