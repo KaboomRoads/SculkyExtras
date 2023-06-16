@@ -3,9 +3,11 @@ package com.kaboomroads.sculkyextras;
 import com.kaboomroads.sculkyextras.block.ExtraBlocks;
 import com.kaboomroads.sculkyextras.block.ExtraWoodTypes;
 import com.kaboomroads.sculkyextras.block.entity.ExtraBlockEntities;
+import com.kaboomroads.sculkyextras.creativemodetab.ExtraCreativeModeTabs;
 import com.kaboomroads.sculkyextras.entity.ExtraEntityTypes;
 import com.kaboomroads.sculkyextras.item.ExtraItems;
 import com.kaboomroads.sculkyextras.poi.ExtraPOIs;
+import com.kaboomroads.sculkyextras.tag.ModTags;
 import com.kaboomroads.sculkyextras.world.biome.ExtraBiomes;
 import com.kaboomroads.sculkyextras.world.dimension.ExtraDimensionTypes;
 import com.kaboomroads.sculkyextras.world.dimension.ExtraDimensions;
@@ -29,22 +31,24 @@ public class SculkyExtras {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public SculkyExtras() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ExtraItems.register(modEventBus);
-        ExtraBlocks.register(modEventBus);
-        ExtraBlockEntities.register(modEventBus);
-        ExtraEntityTypes.register(modEventBus);
-        ExtraPOIs.register(modEventBus);
-        ExtraFeatures.register(modEventBus);
-        ExtraConfiguredFeatures.register(modEventBus);
-        ExtraPlacedFeatures.register(modEventBus);
-        ExtraStructurePieces.register(modEventBus);
-        ExtraStructures.register(modEventBus);
-        ExtraBiomes.register(modEventBus);
-        ExtraDimensions.register(modEventBus);
-        ExtraDimensionTypes.register(modEventBus);
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ExtraItems.register(eventBus);
+        ExtraBlocks.register(eventBus);
+        ExtraBlockEntities.register(eventBus);
+        ExtraEntityTypes.register(eventBus);
+        ExtraPOIs.register(eventBus);
+        ExtraFeatures.register(eventBus);
+        ExtraConfiguredFeatures.register(eventBus);
+        ExtraPlacedFeatures.register(eventBus);
+        ExtraStructurePieces.register(eventBus);
+        ExtraStructures.register(eventBus);
+        ExtraBiomes.register(eventBus);
+        ExtraDimensions.register(eventBus);
+        ExtraDimensionTypes.register(eventBus);
         ExtraWoodTypes.register();
-        modEventBus.addListener(this::commonSetup);
+        ExtraCreativeModeTabs.register(eventBus);
+        ModTags.init();
+        eventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
 

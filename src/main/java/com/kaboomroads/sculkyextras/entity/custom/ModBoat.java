@@ -49,34 +49,33 @@ public class ModBoat extends Boat {
     @Override
     protected void addAdditionalSaveData(@NotNull CompoundTag compoundTag) {
         super.addAdditionalSaveData(compoundTag);
-        compoundTag.putString("Type", this.getCustomVariant().getName());
+        compoundTag.putString("Type", getCustomVariant().getName());
     }
 
     @NotNull
     @Override
     public Item getDropItem() {
-        return switch (this.getCustomVariant()) {
+        return switch (getCustomVariant()) {
             case ABYSSAL -> ExtraItems.ABYSSAL_BOAT.get();
-            default -> ExtraItems.ABYSSAL_BOAT.get();
         };
     }
 
     public void setCustomVariant(Type type) {
-        this.entityData.set(CUSTOM_TYPE, type.ordinal());
+        entityData.set(CUSTOM_TYPE, type.ordinal());
     }
 
     @NotNull
     public Type getCustomVariant() {
-        return Type.byId(this.entityData.get(CUSTOM_TYPE));
+        return Type.byId(entityData.get(CUSTOM_TYPE));
     }
 
     public enum Type implements StringRepresentable {
-        ABYSSAL(ExtraBlocks.ABYSSAL_PLANKS.get(), "abyssal");
+        ABYSSAL(ExtraBlocks.ABYSSAL_PLANKS.get(), "baobab");
 
         private final String name;
         private final Block planks;
-        public static final StringRepresentable.EnumCodec<ModBoat.Type> CODEC = StringRepresentable.fromEnum(ModBoat.Type::values);
-        private static final IntFunction<ModBoat.Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
+        public static final EnumCodec<Type> CODEC = StringRepresentable.fromEnum(Type::values);
+        private static final IntFunction<Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
 
         Type(Block planks, String name) {
             this.planks = planks;
@@ -100,11 +99,11 @@ public class ModBoat extends Boat {
             return this.name;
         }
 
-        public static ModBoat.Type byId(int id) {
+        public static Type byId(int id) {
             return BY_ID.apply(id);
         }
 
-        public static ModBoat.Type byName(String name) {
+        public static Type byName(String name) {
             return CODEC.byName(name, ABYSSAL);
         }
     }

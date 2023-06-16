@@ -1,6 +1,7 @@
 package com.kaboomroads.sculkyextras.block.custom;
 
 import com.kaboomroads.sculkybits.block.entity.custom.SculkAttacker;
+import com.kaboomroads.sculkyextras.tag.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -23,7 +24,6 @@ import net.minecraft.world.level.block.state.properties.SculkSensorPhase;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
@@ -113,6 +113,6 @@ public class SculkTendrilBlock extends BushBlock implements SimpleWaterloggedBlo
 
     @Override
     protected boolean mayPlaceOn(BlockState blockState, @NotNull BlockGetter blockGetter, @NotNull BlockPos blockPos) {
-        return Block.isFaceFull(blockState.getCollisionShape(blockGetter, blockPos.below()), Direction.UP) && (blockState.is(BlockTags.SCULK_REPLACEABLE_WORLD_GEN) || blockState.getMaterial() == Material.SCULK);
+        return Block.isFaceFull(blockState.getCollisionShape(blockGetter, blockPos.below()), Direction.UP) && (blockState.is(BlockTags.SCULK_REPLACEABLE_WORLD_GEN) || blockState.is(ModTags.Blocks.SCULK_TENDRIL_GROWABLE));
     }
 }

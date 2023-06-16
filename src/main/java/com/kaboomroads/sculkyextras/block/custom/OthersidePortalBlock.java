@@ -21,11 +21,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
@@ -42,13 +43,7 @@ public class OthersidePortalBlock extends Block {
     protected static final VoxelShape Z_AABB = Block.box(6.0D, 0.0D, 0.0D, 10.0D, 16.0D, 16.0D);
 
     public OthersidePortalBlock() {
-        super(Properties.of(Material.PORTAL)
-                .strength(-1F)
-                .noCollission()
-                .lightLevel(s -> 10)
-                .noLootTable()
-                .sound(SoundType.GLASS)
-        );
+        super(BlockBehaviour.Properties.of().noCollission().randomTicks().strength(-1.0F).sound(SoundType.GLASS).lightLevel((p_50872_) -> 11).pushReaction(PushReaction.BLOCK));
         registerDefaultState(stateDefinition.any().setValue(AXIS, Direction.Axis.X));
     }
 
@@ -111,7 +106,7 @@ public class OthersidePortalBlock extends Block {
             if (entity.isOnPortalCooldown()) {
                 entity.setPortalCooldown();
             } else {
-                Level entityLevel = entity.level;
+                Level entityLevel = entity.level();
                 if (!entityLevel.isClientSide && !blockPos.equals(entity.portalEntrancePos))
                     entity.portalEntrancePos = blockPos.immutable();
                 MinecraftServer minecraftserver = entityLevel.getServer();

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:sculk",
+    "minecraft:sculk_sensor",
+    "minecraft:sculk_catalyst",
+    "sculkybits:sculk_flesh",
+    "sculkybits:sculk_growth",
+    "sculkyextras:sculk_soil"
+  ]
+}

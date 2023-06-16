@@ -126,7 +126,7 @@ public record OthersideTeleporter(ServerLevel level) implements ITeleporter {
         for (int i = -1; i < 3; ++i)
             for (int j = -1; j < 4; ++j) {
                 offsetPos.setWithOffset(originalPos, directionIn.getStepX() * i + direction.getStepX() * offsetScale, j, directionIn.getStepZ() * i + direction.getStepZ() * offsetScale);
-                if (j < 0 && !this.level.getBlockState(offsetPos).getMaterial().isSolid()) return false;
+                if (j < 0 && !this.level.getBlockState(offsetPos).canOcclude()) return false;
                 if (j >= 0 && !this.level.isEmptyBlock(offsetPos)) return false;
             }
         return true;
@@ -136,22 +136,22 @@ public record OthersideTeleporter(ServerLevel level) implements ITeleporter {
     @Override
     public PortalInfo getPortalInfo(Entity entity, ServerLevel level, Function<ServerLevel, PortalInfo> defaultPortalInfo) {
         boolean destinationIsUG = level.dimension() == ExtraDimensions.OTHERSIDE;
-        if (entity.level.dimension() != ExtraDimensions.OTHERSIDE && !destinationIsUG) return null;
+        if (entity.level().dimension() != ExtraDimensions.OTHERSIDE && !destinationIsUG) return null;
         else {
             WorldBorder border = level.getWorldBorder();
             double minX = Math.max(-2.9999872E7D, border.getMinX() + 16.0D);
             double minZ = Math.max(-2.9999872E7D, border.getMinZ() + 16.0D);
             double maxX = Math.min(2.9999872E7D, border.getMaxX() - 16.0D);
             double maxZ = Math.min(2.9999872E7D, border.getMaxZ() - 16.0D);
-            double coordinateDifference = DimensionType.getTeleportationScale(entity.level.dimensionType(), level.dimensionType());
-            BlockPos blockpos = new BlockPos(Mth.clamp(entity.getX() * coordinateDifference, minX, maxX), entity.getY(), Mth.clamp(entity.getZ() * coordinateDifference, minZ, maxZ));
+            double coordinateDifference = DimensionType.getTeleportationScale(entity.level().dimensionType(), level.dimensionType());
+            BlockPos blockpos = new BlockPos((int) Mth.clamp(entity.getX() * coordinateDifference, minX, maxX), (int) entity.getY(), (int) Mth.clamp(entity.getZ() * coordinateDifference, minZ, maxZ));
             return this.getOrMakePortal(entity, blockpos).map(result -> {
-                BlockState blockstate = entity.level.getBlockState(entity.portalEntrancePos);
+                BlockState blockstate = entity.level().getBlockState(entity.portalEntrancePos);
                 Direction.Axis axis;
                 Vec3 vector3d;
                 if (blockstate.hasProperty(BlockStateProperties.HORIZONTAL_AXIS)) {
                     axis = blockstate.getValue(BlockStateProperties.HORIZONTAL_AXIS);
-                    BlockUtil.FoundRectangle rectangle = BlockUtil.getLargestRectangleAround(entity.portalEntrancePos, axis, 21, Direction.Axis.Y, 21, pos -> entity.level.getBlockState(pos) == blockstate);
+                    BlockUtil.FoundRectangle rectangle = BlockUtil.getLargestRectangleAround(entity.portalEntrancePos, axis, 21, Direction.Axis.Y, 21, pos -> entity.level().getBlockState(pos) == blockstate);
                     vector3d = PortalShape.getRelativePosition(rectangle, axis, entity.position(), entity.getDimensions(entity.getPose()));
                 } else {
                     axis = Direction.Axis.X;
